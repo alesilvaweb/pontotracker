@@ -1,0 +1,161 @@
+application {
+  config {
+    baseName timesheetSystem
+    applicationType monolith
+    packageName com.timesheetsystem
+    authenticationType jwt
+    prodDatabaseType postgresql
+    clientFramework react
+    buildTool maven
+    enableSwaggerCodegen true
+    languages [pt-br, en]
+  }
+  entities *
+}
+
+// Enum para Modalidade de Trabalho
+enum WorkModality {
+  REMOTE, IN_PERSON, HYBRID
+}
+
+// Enum para Tipo de Entrada
+enum EntryType {
+  REGULAR, OVERTIME, BREAK, LUNCH
+}
+
+// Enum para Categoria de Hora Extra
+enum OvertimeCategory {
+  NORMAL, SPECIAL
+}
+
+// Configurações do sistema
+entity SystemConfig {
+  dailyWorkHours Double required
+  weeklyWorkHours Double required
+  overtimeNormalRate Double required
+  overtimeSpecialRate Double required
+  lastUpdated ZonedDateTime required
+}
+
+// Empresa
+entity Company {
+  name String required
+  cnpj String required pattern(/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/)
+  active Boolean required
+  createdAt ZonedDateTime required
+  updatedAt ZonedDateTime required
+}
+
+// Configurações de Ajuda de Custo por Empresa
+entity CompanyAllowance {
+  presentialAllowanceValue Double required
+  remoteAllowanceValue Double required min(0)
+  fullTimeThresholdHours Double required min(0)
+  partTimeAllowancePercentage Integer required min(0) max(100)
+  considerWorkDistance Boolean required
+  minimumDistanceToReceive Integer min(0)
+  active Boolean required
+  lastUpdated ZonedDateTime required
+}
+
+// Registro de Ponto
+entity Timesheet {
+  date LocalDate required
+  modality WorkModality required
+  classification String
+  description String maxlength(2000)
+  totalHours Double required min(0)
+  overtimeHours Double min(0)
+  allowanceValue Double min(0)
+  status String required
+  createdAt ZonedDateTime required
+  updatedAt ZonedDateTime
+  approvedAt ZonedDateTime
+  approvedBy String
+}
+
+// Entrada de Horário
+entity TimeEntry {
+  startTime ZonedDateTime required
+  endTime ZonedDateTime required
+  type EntryType required
+  overtimeCategory OvertimeCategory
+  description String maxlength(500)
+  hoursWorked Double required min(0)
+}
+
+// Relatório de Horas
+entity TimesheetReport {
+  userId Long required
+  userName String required
+  companyId Long required
+  companyName String required
+  startDate LocalDate required
+  endDate LocalDate required
+  totalRegularHours Double required min(0)
+  totalOvertimeHours Double required min(0)
+  totalAllowance Double required min(0)
+  status String required
+  generatedAt ZonedDateTime required
+  approvedAt ZonedDateTime
+  comments String maxlength(1000)
+}
+
+// Alerta de Horário
+entity TimesheetAlert {
+  userId Long required
+  timesheetId Long required
+  date LocalDate required
+  type String required
+  message String required
+  severity String required
+  status String required
+  createdAt ZonedDateTime required
+  resolvedAt ZonedDateTime
+  resolution String maxlength(500)
+}
+
+// Configurações de Usuário
+entity UserPreference {
+  defaultCompanyId Long required
+  emailNotifications Boolean required
+  smsNotifications Boolean required
+  pushNotifications Boolean required
+  reportFrequency String
+  weekStartDay Integer min(0) max(6)
+}
+
+// Histórico de Alterações
+entity TimesheetAudit {
+  entityType String required
+  entityId Long required
+  action String required
+  timestamp ZonedDateTime required
+  userId Long required
+  oldValues String maxlength(10000)
+  newValues String maxlength(10000)
+}
+
+// Relações entre entidades
+relationship OneToOne {
+  CompanyAllowance{company required} to Company
+  UserPreference{user(login) required} to User with builtInEntity
+}
+
+relationship ManyToOne {
+  Timesheet{user(login) required} to User with builtInEntity
+  Timesheet{company required} to Company
+  TimesheetReport{generatedBy(login) required} to User with builtInEntity
+  TimesheetReport{approvedBy(login)} to User with builtInEntity
+  TimesheetAlert{resolvedBy(login)} to User with builtInEntity
+}
+
+relationship OneToMany {
+  Timesheet to TimeEntry{timesheet required}
+}
+
+// Opções para entidades
+paginate Timesheet, TimeEntry, TimesheetReport, TimesheetAlert with pagination
+filter Timesheet, TimeEntry, Company, TimesheetReport, TimesheetAlert
+service all with serviceImpl
+dto * with mapstruct

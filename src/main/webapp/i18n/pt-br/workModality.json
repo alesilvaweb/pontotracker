@@ -1,0 +1,10 @@
+{
+  "timesheetSystemApp": {
+    "WorkModality": {
+      "null": "",
+      "REMOTE": "REMOTE",
+      "IN_PERSON": "IN_PERSON",
+      "HYBRID": "HYBRID"
+    }
+  }
+}

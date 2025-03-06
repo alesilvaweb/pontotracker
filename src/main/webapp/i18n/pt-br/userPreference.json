@@ -1,0 +1,30 @@
+{
+  "timesheetSystemApp": {
+    "userPreference": {
+      "home": {
+        "title": "User Preferences",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo User Preference",
+        "createOrEditLabel": "Criar ou editar User Preference",
+        "notFound": "Nenhum User Preference encontrado"
+      },
+      "created": "Um novo User Preference foi criado com o identificador {{ param }}",
+      "updated": "Um User Preference foi atualizado com o identificador {{ param }}",
+      "deleted": "Um User Preference foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir User Preference {{ id }}?"
+      },
+      "detail": {
+        "title": "User Preference"
+      },
+      "id": "ID",
+      "defaultCompanyId": "Default Company Id",
+      "emailNotifications": "Email Notifications",
+      "smsNotifications": "Sms Notifications",
+      "pushNotifications": "Push Notifications",
+      "reportFrequency": "Report Frequency",
+      "weekStartDay": "Week Start Day",
+      "user": "User"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "timesheetSystemApp": {
+    "companyAllowance": {
+      "home": {
+        "title": "Company Allowances",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Company Allowance",
+        "createOrEditLabel": "Create or edit a Company Allowance",
+        "notFound": "No Company Allowances found"
+      },
+      "created": "A new Company Allowance is created with identifier {{ param }}",
+      "updated": "A Company Allowance is updated with identifier {{ param }}",
+      "deleted": "A Company Allowance is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Company Allowance {{ id }}?"
+      },
+      "detail": {
+        "title": "Company Allowance"
+      },
+      "id": "ID",
+      "presentialAllowanceValue": "Presential Allowance Value",
+      "remoteAllowanceValue": "Remote Allowance Value",
+      "fullTimeThresholdHours": "Full Time Threshold Hours",
+      "partTimeAllowancePercentage": "Part Time Allowance Percentage",
+      "considerWorkDistance": "Consider Work Distance",
+      "minimumDistanceToReceive": "Minimum Distance To Receive",
+      "active": "Active",
+      "lastUpdated": "Last Updated",
+      "company": "Company"
+    }
+  }
+}

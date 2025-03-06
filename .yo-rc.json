@@ -1,0 +1,30 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "authenticationType": "jwt",
+    "baseName": "timesheetSystem",
+    "buildTool": "maven",
+    "clientFramework": "react",
+    "devServerPort": 9060,
+    "enableSwaggerCodegen": true,
+    "entities": [
+      "SystemConfig",
+      "Company",
+      "CompanyAllowance",
+      "Timesheet",
+      "TimeEntry",
+      "TimesheetReport",
+      "TimesheetAlert",
+      "UserPreference",
+      "TimesheetAudit"
+    ],
+    "jhipsterVersion": "8.6.0",
+    "jwtSecretKey": "ZTNlNWE2YmMyOGJkMDVjYzlkYTM0OTEyMjM0MDc4NGQxNmVhMzI5NDJmNzJlYjRlOTYzZWE3NTQ2N2ViOGI1ZTM3ZjU5MDM3Y2ZlMzNmYjEwYzZmZmQzYTIxNWJjZmM1NGE5MjliN2FjOGQ5Nzk5YTE3NmVjZjcyNzU1M2JmMTA=",
+    "languages": ["en", "pt-br"],
+    "lastLiquibaseTimestamp": 1741229741000,
+    "nativeLanguage": "en",
+    "packageFolder": "com/timesheetsystem",
+    "packageName": "com.timesheetsystem",
+    "prodDatabaseType": "postgresql"
+  }
+}

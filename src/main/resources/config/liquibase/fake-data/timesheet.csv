@@ -1,0 +1,11 @@
+id;date;modality;classification;description;total_hours;overtime_hours;allowance_value;status;created_at;updated_at;approved_at;approved_by;user_id;company_id
+1;2025-03-05;IN_PERSON;spiffy both mist;kindness;2202.89;31112.49;22048.85;sneaky;2025-03-05T13:05:50;2025-03-05T16:55:54;2025-03-05T04:03:05;athwart when;1;1
+2;2025-03-05;HYBRID;inasmuch geez;boo cleverly;4199.88;10858.59;20335.25;vanquish when;2025-03-05T05:00:25;2025-03-05T10:06:00;2025-03-05T21:05:03;ah protest;2;2
+3;2025-03-05;IN_PERSON;oof;phew yahoo;30456.79;4413.16;12496.5;loosely alarming;2025-03-05T21:09:05;2025-03-05T19:42:23;2025-03-05T09:50:23;pace;1;3
+4;2025-03-06;HYBRID;mmm identify neatly;mansard while;17285.94;10705.92;4123.23;drat except catalyze;2025-03-05T17:12:31;2025-03-05T03:39:21;2025-03-05T18:13:21;blemish;2;4
+5;2025-03-05;HYBRID;apud calmly;subdued zowie once;11742.3;11038.13;11975.52;surprisingly filthy;2025-03-05T04:53:24;2025-03-05T21:26:01;2025-03-05T11:37:59;whereas ah concerned;1;5
+6;2025-03-05;HYBRID;toward;dreamily;28326.23;27336.74;25819.61;jubilantly blah correctly;2025-03-05T14:15:44;2025-03-05T08:52:12;2025-03-05T13:52:02;till as;1;6
+7;2025-03-05;HYBRID;fabulous;lost;25970.25;31041.5;16846.63;workplace stultify tighten;2025-03-05T05:01:30;2025-03-05T14:22:34;2025-03-05T10:29:26;old-fashioned cozy;1;7
+8;2025-03-05;HYBRID;unbearably emphasise;which suspiciously;23682.78;7915.41;12408.32;a wherever;2025-03-05T05:16:14;2025-03-06T01:41:12;2025-03-05T17:00:24;descriptive stealthily energetically;1;8
+9;2025-03-06;HYBRID;haunt once defiantly;psst annually first;20849.72;24658.2;8173.01;geez multicast after;2025-03-06T00:53:57;2025-03-06T02:40:44;2025-03-05T04:43:00;united as over;2;9
+10;2025-03-05;REMOTE;excluding;ack unless likewise;5459.02;16818.99;9241.49;excite;2025-03-05T18:57:37;2025-03-05T23:08:01;2025-03-05T18:17:11;ideal now;2;10

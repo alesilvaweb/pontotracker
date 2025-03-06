@@ -1,0 +1,30 @@
+{
+  "timesheetSystemApp": {
+    "timeEntry": {
+      "home": {
+        "title": "Time Entries",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Time Entry",
+        "createOrEditLabel": "Criar ou editar Time Entry",
+        "notFound": "Nenhum Time Entry encontrado"
+      },
+      "created": "Um novo Time Entry foi criado com o identificador {{ param }}",
+      "updated": "Um Time Entry foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Time Entry foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Time Entry {{ id }}?"
+      },
+      "detail": {
+        "title": "Time Entry"
+      },
+      "id": "ID",
+      "startTime": "Start Time",
+      "endTime": "End Time",
+      "type": "Type",
+      "overtimeCategory": "Overtime Category",
+      "description": "Description",
+      "hoursWorked": "Hours Worked",
+      "timesheet": "Timesheet"
+    }
+  }
+}

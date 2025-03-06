@@ -1,0 +1,50 @@
+{
+  "annotations": {
+    "changelogDate": "20250306025541"
+  },
+  "applications": ["timesheetSystem"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "entityType",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "entityId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "action",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "timestamp",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "userId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "oldValues",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "10000"
+    },
+    {
+      "fieldName": "newValues",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "10000"
+    }
+  ],
+  "name": "TimesheetAudit",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

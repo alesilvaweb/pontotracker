@@ -1,0 +1,9 @@
+{
+  "timesheetSystemApp": {
+    "OvertimeCategory": {
+      "null": "",
+      "NORMAL": "NORMAL",
+      "SPECIAL": "SPECIAL"
+    }
+  }
+}

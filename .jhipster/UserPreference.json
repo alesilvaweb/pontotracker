@@ -1,0 +1,54 @@
+{
+  "annotations": {
+    "changelogDate": "20250306025441"
+  },
+  "applications": ["timesheetSystem"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "defaultCompanyId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "emailNotifications",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "smsNotifications",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "pushNotifications",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "reportFrequency",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "weekStartDay",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["min", "max"],
+      "fieldValidateRulesMax": "6",
+      "fieldValidateRulesMin": "0"
+    }
+  ],
+  "name": "UserPreference",
+  "relationships": [
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "user",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one",
+      "relationshipValidateRules": "required",
+      "relationshipWithBuiltInEntity": true
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

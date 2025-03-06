@@ -1,0 +1,30 @@
+{
+  "timesheetSystemApp": {
+    "timesheetAudit": {
+      "home": {
+        "title": "Timesheet Audits",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Timesheet Audit",
+        "createOrEditLabel": "Create or edit a Timesheet Audit",
+        "notFound": "No Timesheet Audits found"
+      },
+      "created": "A new Timesheet Audit is created with identifier {{ param }}",
+      "updated": "A Timesheet Audit is updated with identifier {{ param }}",
+      "deleted": "A Timesheet Audit is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Timesheet Audit {{ id }}?"
+      },
+      "detail": {
+        "title": "Timesheet Audit"
+      },
+      "id": "ID",
+      "entityType": "Entity Type",
+      "entityId": "Entity Id",
+      "action": "Action",
+      "timestamp": "Timestamp",
+      "userId": "User Id",
+      "oldValues": "Old Values",
+      "newValues": "New Values"
+    }
+  }
+}

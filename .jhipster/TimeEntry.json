@@ -1,0 +1,56 @@
+{
+  "annotations": {
+    "changelogDate": "20250306025141"
+  },
+  "applications": ["timesheetSystem"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "startTime",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "endTime",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "EntryType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "REGULAR,OVERTIME,BREAK,LUNCH"
+    },
+    {
+      "fieldName": "overtimeCategory",
+      "fieldType": "OvertimeCategory",
+      "fieldValues": "NORMAL,SPECIAL"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "500"
+    },
+    {
+      "fieldName": "hoursWorked",
+      "fieldType": "Double",
+      "fieldValidateRules": ["required", "min"],
+      "fieldValidateRulesMin": "0"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "TimeEntry",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "timesheet",
+      "relationshipName": "timesheet",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

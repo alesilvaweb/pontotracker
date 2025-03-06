@@ -1,0 +1,28 @@
+{
+  "timesheetSystemApp": {
+    "systemConfig": {
+      "home": {
+        "title": "System Configs",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo System Config",
+        "createOrEditLabel": "Criar ou editar System Config",
+        "notFound": "Nenhum System Config encontrado"
+      },
+      "created": "Um novo System Config foi criado com o identificador {{ param }}",
+      "updated": "Um System Config foi atualizado com o identificador {{ param }}",
+      "deleted": "Um System Config foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir System Config {{ id }}?"
+      },
+      "detail": {
+        "title": "System Config"
+      },
+      "id": "ID",
+      "dailyWorkHours": "Daily Work Hours",
+      "weeklyWorkHours": "Weekly Work Hours",
+      "overtimeNormalRate": "Overtime Normal Rate",
+      "overtimeSpecialRate": "Overtime Special Rate",
+      "lastUpdated": "Last Updated"
+    }
+  }
+}

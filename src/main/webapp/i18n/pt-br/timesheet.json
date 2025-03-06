@@ -1,0 +1,38 @@
+{
+  "timesheetSystemApp": {
+    "timesheet": {
+      "home": {
+        "title": "Timesheets",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Timesheet",
+        "createOrEditLabel": "Criar ou editar Timesheet",
+        "notFound": "Nenhum Timesheet encontrado"
+      },
+      "created": "Um novo Timesheet foi criado com o identificador {{ param }}",
+      "updated": "Um Timesheet foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Timesheet foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Timesheet {{ id }}?"
+      },
+      "detail": {
+        "title": "Timesheet"
+      },
+      "id": "ID",
+      "date": "Date",
+      "modality": "Modality",
+      "classification": "Classification",
+      "description": "Description",
+      "totalHours": "Total Hours",
+      "overtimeHours": "Overtime Hours",
+      "allowanceValue": "Allowance Value",
+      "status": "Status",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At",
+      "approvedAt": "Approved At",
+      "approvedBy": "Approved By",
+      "timeEntry": "Time Entry",
+      "user": "User",
+      "company": "Company"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "timesheetSystemApp": {
+    "EntryType": {
+      "null": "",
+      "REGULAR": "REGULAR",
+      "OVERTIME": "OVERTIME",
+      "BREAK": "BREAK",
+      "LUNCH": "LUNCH"
+    }
+  }
+}

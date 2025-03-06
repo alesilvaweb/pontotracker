@@ -1,0 +1,34 @@
+{
+  "timesheetSystemApp": {
+    "timesheetAlert": {
+      "home": {
+        "title": "Timesheet Alerts",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Timesheet Alert",
+        "createOrEditLabel": "Criar ou editar Timesheet Alert",
+        "notFound": "Nenhum Timesheet Alert encontrado"
+      },
+      "created": "Um novo Timesheet Alert foi criado com o identificador {{ param }}",
+      "updated": "Um Timesheet Alert foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Timesheet Alert foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Timesheet Alert {{ id }}?"
+      },
+      "detail": {
+        "title": "Timesheet Alert"
+      },
+      "id": "ID",
+      "userId": "User Id",
+      "timesheetId": "Timesheet Id",
+      "date": "Date",
+      "type": "Type",
+      "message": "Message",
+      "severity": "Severity",
+      "status": "Status",
+      "createdAt": "Created At",
+      "resolvedAt": "Resolved At",
+      "resolution": "Resolution",
+      "resolvedBy": "Resolved By"
+    }
+  }
+}

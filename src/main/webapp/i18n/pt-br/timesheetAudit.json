@@ -1,0 +1,30 @@
+{
+  "timesheetSystemApp": {
+    "timesheetAudit": {
+      "home": {
+        "title": "Timesheet Audits",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Timesheet Audit",
+        "createOrEditLabel": "Criar ou editar Timesheet Audit",
+        "notFound": "Nenhum Timesheet Audit encontrado"
+      },
+      "created": "Um novo Timesheet Audit foi criado com o identificador {{ param }}",
+      "updated": "Um Timesheet Audit foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Timesheet Audit foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Timesheet Audit {{ id }}?"
+      },
+      "detail": {
+        "title": "Timesheet Audit"
+      },
+      "id": "ID",
+      "entityType": "Entity Type",
+      "entityId": "Entity Id",
+      "action": "Action",
+      "timestamp": "Timestamp",
+      "userId": "User Id",
+      "oldValues": "Old Values",
+      "newValues": "New Values"
+    }
+  }
+}
