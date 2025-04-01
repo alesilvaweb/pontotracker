@@ -1,0 +1,8 @@
+// Adicione estas importações no início do arquivo routes.tsx
+import TimesheetDashboard from 'app/modules/dashboard/timesheet-dashboard';
+
+// Adicione esta rota junto com as outras rotas dentro da função Routes
+<ErrorBoundaryRoute path="/dashboard" component={TimesheetDashboard} />
+
+// Dentro da seção "Admin Routes", adicione:
+<ErrorBoundaryRoute path="/admin/timesheet" component={TimesheetAdminPanel} />

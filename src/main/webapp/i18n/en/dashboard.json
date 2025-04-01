@@ -1,0 +1,50 @@
+{
+  "timesheetSystemApp": {
+    "dashboard": {
+      "title": "Timesheet Dashboard",
+      "filters": "Filters",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "company": "Company",
+      "modality": "Modality",
+      "exportReport": "Export Report",
+      "summary": "Summary",
+      "totalDays": "Total Days",
+      "totalHours": "Total Hours",
+      "overtimeHours": "Overtime Hours",
+      "averageHours": "Daily Average",
+      "totalAllowance": "Total Allowance",
+      "hoursChart": "Hours Worked by Day",
+      "hoursEvolution": "Hours Evolution",
+      "allowanceChart": "Allowance",
+      "noData": "No data found for the selected filters.",
+      "loading": "Loading data..."
+    },
+    "admin": {
+      "title": "Timesheet Administration",
+      "filters": "Filters",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "company": "Company",
+      "employee": "Employee",
+      "status": "Status",
+      "settings": "Settings",
+      "generateReport": "Generate Report",
+      "alerts": "Pending Alerts",
+      "alertsCount": "There are {count} alerts that need attention.",
+      "all": "All",
+      "pending": "Pending",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "alertsTab": "Alerts"
+    }
+  },
+  "global": {
+    "menu": {
+      "dashboard": "Dashboard",
+      "admin": {
+        "timesheet": "Timesheet Control"
+      }
+    }
+  }
+}

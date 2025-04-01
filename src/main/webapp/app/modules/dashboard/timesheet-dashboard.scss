@@ -1,0 +1,134 @@
+.timesheet-dashboard-container {
+  padding: 20px 0;
+
+  h2 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .card {
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+
+    .card-header {
+      background-color: #f8f9fa;
+      border-bottom: 1px solid #eee;
+      padding: 12px 20px;
+
+      h5 {
+        font-weight: 600;
+        color: #495057;
+      }
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+  }
+
+  .summary-box {
+    padding: 15px 10px;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+    height: 100%;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #e9ecef;
+      transform: translateY(-2px);
+    }
+
+    h6 {
+      color: #6c757d;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+
+    .summary-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #495057;
+    }
+  }
+
+  .recharts-wrapper {
+    margin: 0 auto;
+  }
+
+  // Estilo para o formulário de filtros
+  .form-group {
+    margin-bottom: 1rem;
+
+    label {
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+  }
+
+  .alert {
+    border-radius: 6px;
+  }
+
+  // Cores personalizadas para os gráficos
+  .recharts-bar-rectangle[fill='#8884d8'] {
+    fill: #6f42c1; // Horas regulares
+  }
+
+  .recharts-bar-rectangle[fill='#82ca9d'] {
+    fill: #20c997; // Horas extras
+  }
+
+  // Estilo para os tooltips dos gráficos
+  .recharts-tooltip-wrapper {
+    .recharts-default-tooltip {
+      background-color: rgba(255, 255, 255, 0.95) !important;
+      border: 1px solid #ddd !important;
+      padding: 10px !important;
+      border-radius: 4px !important;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+
+      .recharts-tooltip-label {
+        font-weight: 600 !important;
+        margin-bottom: 5px !important;
+      }
+
+      .recharts-tooltip-item-list {
+        margin: 0 !important;
+        padding: 0 !important;
+
+        .recharts-tooltip-item {
+          padding: 3px 0 !important;
+
+          .recharts-tooltip-item-name {
+            font-weight: 500 !important;
+          }
+
+          .recharts-tooltip-item-value {
+            font-weight: 600 !important;
+          }
+        }
+      }
+    }
+  }
+
+  // Responsividade
+  @media (max-width: 768px) {
+    .summary-box {
+      margin-bottom: 15px;
+
+      .summary-value {
+        font-size: 1.2rem;
+      }
+    }
+
+    .row > [class*='col-'] {
+      margin-bottom: 15px;
+    }
+  }
+}

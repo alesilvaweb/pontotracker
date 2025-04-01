@@ -1,0 +1,24 @@
+{
+  "timesheetSystemApp": {
+    "dashboard": {
+      "title": "Dashboard de Ponto",
+      "filters": "Filtros",
+      "startDate": "Data Inicial",
+      "endDate": "Data Final",
+      "company": "Empresa",
+      "modality": "Modalidade",
+      "exportReport": "Exportar Relatório",
+      "summary": "Resumo",
+      "totalDays": "Total de Dias",
+      "totalHours": "Total de Horas",
+      "overtimeHours": "Horas Extras",
+      "averageHours": "Média Diária",
+      "totalAllowance": "Ajuda de Custo",
+      "hoursChart": "Horas Trabalhadas por Dia",
+      "hoursEvolution": "Evolução de Horas",
+      "allowanceChart": "Ajuda de Custo",
+      "noData": "Nenhum dado encontrado para os filtros selecionados.",
+      "loading": "Carregando dados..."
+    }
+  }
+}

@@ -1,0 +1,9 @@
+// No menu principal, adicione:
+<MenuItem icon="tachometer-alt" to="/dashboard">
+  <Translate contentKey="global.menu.dashboard">Dashboard</Translate>
+</MenuItem>
+
+// No menu de administração, adicione:
+<MenuItem icon="clipboard-list" to="/admin/timesheet">
+  <Translate contentKey="global.menu.admin.timesheet">Controle de Ponto</Translate>
+</MenuItem>

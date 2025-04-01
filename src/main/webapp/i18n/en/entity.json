@@ -1,0 +1,105 @@
+{
+  "entity": {
+    "action": {
+      "addblob": "Adicionar arquivo",
+      "addimage": "Adicionar imagem",
+      "back": "Voltar",
+      "cancel": "Cancelar",
+      "delete": "Excluir",
+      "edit": "Editar",
+      "open": "Abrir",
+      "save": "Salvar",
+      "view": "Visualizar",
+      "show": "Mostrar {{otherEntity}}"
+    },
+    "detail": {
+      "field": "Campo",
+      "value": "Valor"
+    },
+    "delete": {
+      "title": "Confirmar operação de exclusão",
+      "question": "Tem certeza de que deseja excluir {{otherEntity}} {{ id }}?"
+    },
+    "validation": {
+      "required": "Este campo é obrigatório.",
+      "minlength": "Este campo deve ter pelo menos {{min}} caracteres.",
+      "maxlength": "Este campo não pode ter mais de {{max}} caracteres.",
+      "min": "Este campo deve ser maior que {{min}}.",
+      "max": "Este campo não pode ser maior que {{max}}.",
+      "minbytes": "Este campo deve ter pelo menos {{min}} bytes.",
+      "maxbytes": "Este campo não pode ter mais de {{max}} bytes.",
+      "pattern": "Este campo deve seguir o padrão {{pattern}}.",
+      "number": "Este campo deve ser um número.",
+      "datetimelocal": "Este campo deve ser uma data e hora.",
+      "patternLogin": "Este campo pode conter apenas letras, números e e-mails.",
+      "minlengthUsername": "O nome de usuário deve ter pelo menos 1 caractere",
+      "maxlengthUsername": "O nome de usuário não pode ter mais de 50 caracteres"
+    },
+    "filters": {
+      "set": "Filtros aplicados",
+      "clear": "Limpar filtros",
+      "clearAll": "Limpar todos os filtros"
+    },
+    "select": {
+      "title": "Selecionar",
+      "all": "Todos",
+      "none": "Nenhum",
+      "prompt": "Selecione..."
+    },
+    "sort": {
+      "title": "Ordenar",
+      "ascLabel": "Ordem ascendente",
+      "descLabel": "Ordem descendente"
+    },
+    "pagination": {
+      "first": "Primeira",
+      "previous": "Anterior",
+      "next": "Próxima",
+      "last": "Última",
+      "itemsPerPage": "Itens por página:",
+      "jumpTo": "Ir para"
+    },
+    "noMatch": "Nenhum registro encontrado",
+    "search": "Pesquisar...",
+    "toast": {
+      "createdLabel": "Registro criado",
+      "updatedLabel": "Registro atualizado",
+      "deletedLabel": "Registro excluído",
+      "createdSuccessfully": "{{entityName}} foi criado com sucesso",
+      "updatedSuccessfully": "{{entityName}} foi atualizado com sucesso",
+      "deletedSuccessfully": "{{entityName}} foi excluído com sucesso",
+      "errorCreating": "Erro ao criar {{entityName}}",
+      "errorUpdating": "Erro ao atualizar {{entityName}}",
+      "errorDeleting": "Erro ao excluir {{entityName}}"
+    },
+    "batch": {
+      "delete": {
+        "question": "Tem certeza de que deseja excluir {{length}} itens selecionados?"
+      }
+    },
+    "import": {
+      "title": "Importar dados",
+      "lead": "Faça upload de um arquivo CSV ou Excel para importar registros.",
+      "downloadTemplate": "Baixar modelo",
+      "uploadLabel": "Selecionar arquivo",
+      "uploadPlaceholder": "Arraste um arquivo aqui ou clique para selecionar",
+      "startImport": "Iniciar importação",
+      "processing": "Processando importação...",
+      "success": "Importação concluída com sucesso. {{success}} registros importados.",
+      "error": "Erro durante a importação. Verifique o formato do arquivo.",
+      "partialSuccess": "Importação parcial. {{success}} registros importados, {{failed}} falhas."
+    },
+    "export": {
+      "title": "Exportar dados",
+      "lead": "Exporte os dados atuais para um arquivo.",
+      "allData": "Todos os dados",
+      "filteredData": "Dados filtrados",
+      "selectedData": "Dados selecionados",
+      "format": "Formato de exportação",
+      "startExport": "Exportar",
+      "processing": "Preparando exportação...",
+      "success": "Exportação concluída com sucesso.",
+      "error": "Erro durante a exportação."
+    }
+  }
+}

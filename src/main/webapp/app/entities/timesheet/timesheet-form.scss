@@ -1,0 +1,41 @@
+.timesheet-form-container {
+  padding: 20px 0;
+
+  h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .time-entries-section {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 20px 0;
+
+    h4 {
+      margin-bottom: 15px;
+      color: #495057;
+    }
+  }
+
+  .time-entry {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  .summary-section {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+
+    .row {
+      div {
+        font-weight: 500;
+      }
+    }
+  }
+}
