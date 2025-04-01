@@ -2,37 +2,191 @@
   "timesheetSystemApp": {
     "timesheet": {
       "home": {
-        "title": "Timesheets",
-        "refreshListLabel": "Atualizar lista",
-        "createLabel": "Criar novo Timesheet",
-        "createOrEditLabel": "Criar ou editar Timesheet",
-        "notFound": "Nenhum Timesheet encontrado"
+        "title": "Controle de Ponto",
+        "createOrEditLabel": "Criar ou Editar Registro de Ponto",
+        "createLabel": "Criar Novo Registro",
+        "editLabel": "Editar Registro de Ponto",
+        "registerTime": "Registrar Ponto",
+        "notFound": "Nenhum registro encontrado",
+        "refreshListlabel": "Recarregar"
       },
-      "created": "Um novo Timesheet foi criado com o identificador {{ param }}",
-      "updated": "Um Timesheet foi atualizado com o identificador {{ param }}",
-      "deleted": "Um Timesheet foi excluído com o identificador {{ param }}",
+      "created": "Um novo registro de ponto foi criado com o identificador {{ param }}",
+      "updated": "Um registro de ponto foi atualizado com o identificador {{ param }}",
+      "deleted": "Um registro de ponto foi excluído com o identificador {{ param }}",
       "delete": {
-        "question": "Tem certeza de que deseja excluir Timesheet {{ id }}?"
+        "question": "Tem certeza de que deseja excluir o Registro de Ponto {{ id }}?"
       },
       "detail": {
-        "title": "Timesheet"
+        "title": "Detalhes do Registro de Ponto"
       },
       "id": "ID",
-      "date": "Date",
-      "modality": "Modality",
-      "classification": "Classification",
-      "description": "Description",
-      "totalHours": "Total Hours",
-      "overtimeHours": "Overtime Hours",
-      "allowanceValue": "Allowance Value",
+      "date": "Data",
+      "modality": "Modalidade",
+      "classification": "Classificação",
+      "description": "Descrição",
+      "totalHours": "Total de Horas",
+      "overtimeHours": "Horas Extras",
       "status": "Status",
-      "createdAt": "Created At",
-      "updatedAt": "Updated At",
-      "approvedAt": "Approved At",
-      "approvedBy": "Approved By",
-      "timeEntry": "Time Entry",
-      "user": "User",
-      "company": "Company"
+      "createdAt": "Criado em",
+      "updatedAt": "Atualizado em",
+      "user": "Funcionário",
+      "company": "Empresa",
+      "summary": "Resumo de Horas",
+      "month": "Mês Atual",
+      "week": "Semana Atual",
+      "today": "Hoje",
+      "overtime": "Extras",
+      "recentEntries": "Registros Recentes",
+      "viewAll": "Ver Todos"
+    },
+    "timeEntry": {
+      "home": {
+        "title": "Registros de Horário",
+        "createOrEditLabel": "Criar ou Editar Entrada de Horário"
+      },
+      "addEntry": "Adicionar Entrada",
+      "startTime": "Hora Inicial",
+      "endTime": "Hora Final",
+      "type": "Tipo",
+      "hoursWorked": "Horas",
+      "description": "Descrição"
+    },
+    "TimesheetStatus": {
+      "PENDING": "Pendente",
+      "APPROVED": "Aprovado",
+      "REJECTED": "Rejeitado"
+    },
+    "WorkModality": {
+      "REMOTE": "Remoto",
+      "IN_PERSON": "Presencial",
+      "HYBRID": "Híbrido"
+    },
+    "EntryType": {
+      "REGULAR": "Regular",
+      "OVERTIME": "Hora Extra",
+      "BREAK": "Intervalo",
+      "LUNCH": "Almoço"
     }
+  },
+  "entity": {
+    "action": {
+      "addblob": "Adicionar arquivo",
+      "addimage": "Adicionar imagem",
+      "back": "Voltar",
+      "cancel": "Cancelar",
+      "delete": "Excluir",
+      "edit": "Editar",
+      "open": "Abrir",
+      "save": "Salvar",
+      "view": "Visualizar",
+      "show": "Mostrar {{otherEntity}}"
+    },
+    "detail": {
+      "field": "Campo",
+      "value": "Valor"
+    },
+    "delete": {
+      "title": "Confirmar operação de exclusão"
+    },
+    "validation": {
+      "required": "Este campo é obrigatório.",
+      "minlength": "Este campo deve ter pelo menos {{min}} caracteres.",
+      "maxlength": "Este campo não pode ter mais de {{max}} caracteres.",
+      "min": "Este campo deve ser maior que {{min}}.",
+      "max": "Este campo não pode ser maior que {{max}}.",
+      "minbytes": "Este campo deve ter pelo menos {{min}} bytes.",
+      "maxbytes": "Este campo não pode ter mais de {{max}} bytes.",
+      "pattern": "Este campo deve seguir o padrão {{pattern}}.",
+      "number": "Este campo deve ser um número.",
+      "datetimelocal": "Este campo deve ser uma data e hora."
+    },
+    "filters": {
+      "set": "Filtros aplicados",
+      "clear": "Limpar filtros",
+      "clearAll": "Limpar todos os filtros"
+    },
+    "select": {
+      "prompt": "Selecione"
+    }
+  },
+  "global": {
+    "title": "Sistema de Controle de Ponto",
+    "browsehappy": "Você está usando um navegador <strong>desatualizado</strong>. Por favor, <a href=\"http://browsehappy.com/?locale=pt_BR\">atualize seu navegador</a> para ter uma experiência melhor.",
+    "menu": {
+      "home": "Início",
+      "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
+      "entities": {
+        "main": "Entidades",
+        "timesheet": "Controle de Ponto",
+        "timeEntry": "Registros de Horário",
+        "company": "Empresas",
+        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
+      },
+      "account": {
+        "main": "Conta",
+        "settings": "Configurações",
+        "password": "Senha",
+        "sessions": "Sessões",
+        "login": "Entrar",
+        "logout": "Sair",
+        "register": "Registrar"
+      },
+      "admin": {
+        "main": "Administração",
+        "userManagement": "Gerenciamento de usuários",
+        "tracker": "Rastreador de usuário",
+        "metrics": "Métricas",
+        "health": "Estado do Sistema",
+        "configuration": "Configuração",
+        "logs": "Logs",
+        "apidocs": "API",
+        "database": "Banco de dados",
+        "jhipster-needle-menu-add-admin-element": "JHipster will add additional menu entries here (do not translate!)"
+      },
+      "language": "Idioma"
+    },
+    "messages": {
+      "info": {
+        "authenticated": {
+          "prefix": "Se deseja ",
+          "link": "entrar",
+          "suffix": ", utilize as seguintes contas padrões:<br/>- Administrador (usuário=\"admin\" e senha=\"admin\") <br/>- Usuário (usuário=\"user\" e senha=\"user\")."
+        },
+        "register": {
+          "noaccount": "Não possui uma conta ainda?",
+          "link": "Crie uma nova conta"
+        }
+      },
+      "error": {
+        "dontmatch": "A senha e sua confirmação não são iguais!",
+        "notLoggedIn": "Usuário não logado"
+      },
+      "validate": {
+        "newpassword": {
+          "required": "A senha é obrigatória.",
+          "minlength": "A senha deve ter pelo menos 4 caracteres",
+          "maxlength": "A senha não pode ter mais de 50 caracteres",
+          "strength": "Segurança da senha:"
+        },
+        "confirmpassword": {
+          "required": "A confirmação da senha é obrigatória.",
+          "minlength": "A confirmação da senha deve ter pelo menos 4 caracteres",
+          "maxlength": "A confirmação da senha não pode ter mais de 50 caracteres"
+        },
+        "email": {
+          "required": "O e-mail é obrigatório.",
+          "invalid": "E-mail inválido.",
+          "minlength": "O e-mail deve ter pelo menos 5 caracteres",
+          "maxlength": "O e-mail não pode ter mais de 50 caracteres"
+        }
+      }
+    },
+    "field": {
+      "id": "Código"
+    },
+    "ribbon": {
+      "dev": "Desenvolvimento"
+    },
+    "item-count": "Mostrando {{first}} - {{second}} de {{total}} resultados."
   }
 }

@@ -27,6 +27,15 @@ export const getEntities = createAsyncThunk(
   { serializeError: serializeAxiosError },
 );
 
+export const getTimeEntriesByTimesheet = createAsyncThunk(
+  'timeEntry/fetch_by_timesheet',
+  async (timesheetId: string | number) => {
+    const requestUrl = `${apiUrl}?timesheetId.equals=${timesheetId}&cacheBuster=${new Date().getTime()}`;
+    return axios.get<ITimeEntry[]>(requestUrl);
+  },
+  { serializeError: serializeAxiosError },
+);
+
 export const getEntity = createAsyncThunk(
   'timeEntry/fetch_entity',
   async (id: string | number) => {
@@ -103,6 +112,15 @@ export const TimeEntrySlice = createEntitySlice({
           totalItems: parseInt(headers['x-total-count'], 10),
         };
       })
+      .addMatcher(isFulfilled(getTimeEntriesByTimesheet), (state, action) => {
+        const { data } = action.payload;
+        return {
+          ...state,
+          loading: false,
+          entities: data,
+        };
+      })
+
       .addMatcher(isFulfilled(createEntity, updateEntity, partialUpdateEntity), (state, action) => {
         state.updating = false;
         state.loading = false;

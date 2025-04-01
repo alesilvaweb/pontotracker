@@ -24,7 +24,8 @@
       "overtimeCategory": "Overtime Category",
       "description": "Description",
       "hoursWorked": "Hours Worked",
-      "timesheet": "Timesheet"
+      "timesheet": "Timesheet",
+      "addEntry": "Adicionar Entrada"
     }
   }
 }

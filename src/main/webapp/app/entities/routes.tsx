@@ -12,6 +12,7 @@ import TimesheetReport from './timesheet-report';
 import TimesheetAlert from './timesheet-alert';
 import UserPreference from './user-preference';
 import TimesheetAudit from './timesheet-audit';
+import TimesheetDashboard from 'app/modules/dashboard/timesheet-dashboard';
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
 export default () => {
@@ -28,6 +29,7 @@ export default () => {
         <Route path="timesheet-alert/*" element={<TimesheetAlert />} />
         <Route path="user-preference/*" element={<UserPreference />} />
         <Route path="timesheet-audit/*" element={<TimesheetAudit />} />
+        <Route path="dashboard" element={<TimesheetDashboard />} />
         {/* jhipster-needle-add-route-path - JHipster will add routes here */}
       </ErrorBoundaryRoutes>
     </div>

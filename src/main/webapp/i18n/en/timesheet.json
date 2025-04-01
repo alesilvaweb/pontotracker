@@ -32,7 +32,9 @@
       "approvedBy": "Approved By",
       "timeEntry": "Time Entry",
       "user": "User",
-      "company": "Company"
+      "company": "Company",
+      "summary": "Resumo",
+      "prompt": "Selecione"
     }
   }
 }

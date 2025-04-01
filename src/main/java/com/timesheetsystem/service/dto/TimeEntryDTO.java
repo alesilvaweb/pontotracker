@@ -33,6 +33,8 @@ public class TimeEntryDTO implements Serializable {
     @DecimalMin(value = "0")
     private Double hoursWorked;
 
+    private Long timesheetId;
+
     @NotNull
     private TimesheetDTO timesheet;
 
@@ -98,6 +100,14 @@ public class TimeEntryDTO implements Serializable {
 
     public void setTimesheet(TimesheetDTO timesheet) {
         this.timesheet = timesheet;
+    }
+
+    public Long getTimesheetId() {
+        return timesheetId;
+    }
+
+    public void setTimesheetId(Long timesheetId) {
+        this.timesheetId = timesheetId;
     }
 
     @Override

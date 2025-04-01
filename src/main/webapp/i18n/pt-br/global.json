@@ -1,4 +1,90 @@
 {
+  "timesheetHome": {
+    "editEntry": "Edição",
+    "newEntry": "Nova Entrada",
+    "calendar": "Calendário",
+    "addEntry": "Adicionar Registro",
+    "calendarLegend": {
+      "approved": "Aprovado",
+      "pending": "Pendente",
+      "rejected": "Rejeitado",
+      "draft": "Rascunho"
+    }
+  },
+  "timesheetSystemApp": {
+    "timeEntry": {
+      "startTime": "Hora Inicial",
+      "endTime": "Hora Final",
+      "hoursWorked": "Horas"
+    },
+    "timesheet": {
+      "entries": "Entradas",
+      "home": {
+        "title": "Folhas de Ponto",
+        "createLabel": "Criar nova Folha de Ponto",
+        "createOrEditLabel": "Criar ou editar Folha de Ponto",
+        "notFound": "Nenhuma Folha de Ponto encontrada",
+        "search": "Pesquisar Folhas de Ponto..."
+      },
+      "created": "Uma nova Folha de Ponto foi criada com o identificador {{ param }}",
+      "updated": "Uma Folha de Ponto foi atualizada com o identificador {{ param }}",
+      "deleted": "Uma Folha de Ponto foi excluída com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza que deseja excluir a Folha de Ponto {{ id }}?"
+      },
+      "detail": {
+        "title": "Folha de Ponto"
+      },
+      "id": "ID",
+      "date": "Data",
+      "modality": "Modalidade",
+      "description": "Descrição",
+      "totalHours": "Total de Horas",
+      "status": "Status",
+      "createdAt": "Criado em",
+      "createdBy": "Criado por",
+      "updatedAt": "Atualizado em",
+      "updatedBy": "Atualizado por",
+      "company": "Empresa",
+      "user": "Usuário",
+      "timeEntries": "Entradas de Tempo",
+
+      "filters": {
+        "title": "Filtros",
+        "date": "Data",
+        "status": "Status",
+        "company": "Empresa",
+        "apply": "Aplicar",
+        "clear": "Limpar"
+      },
+      "actions": {
+        "view": "Visualizar",
+        "edit": "Editar",
+        "delete": "Excluir",
+        "submit": "Enviar para Aprovação",
+        "approve": "Aprovar",
+        "reject": "Rejeitar",
+        "back": "Voltar",
+        "save": "Salvar"
+      },
+      "calendar": {
+        "title": "Calendário de Folhas de Ponto",
+        "today": "Hoje",
+        "month": "Mês",
+        "week": "Semana",
+        "day": "Dia",
+        "list": "Lista",
+        "next": "Próximo",
+        "previous": "Anterior"
+      },
+      "totals": {
+        "hoursToday": "Horas Hoje",
+        "hoursWeek": "Horas da Semana",
+        "hoursMonth": "Horas do Mês"
+      }
+    }
+  },
+
   "global": {
     "title": "TimesheetSystem",
     "browsehappy": "Você está usando um navegador <strong>desatualizado</strong>. Favor <a href=\"http://browsehappy.com/?locale=pt_BR\">atualize o seu navegador</a> para ter uma experiência melhor.",

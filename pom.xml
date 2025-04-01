@@ -193,7 +193,9 @@
             <version>${archunit-junit5.version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
+
             <!-- Adding the engine dependency to the surefire-plugin unfortunately does not work in the current version. -->
             <!-- https://www.archunit.org/userguide/html/000_Index.html#_junit_5 -->
             <groupId>com.tngtech.archunit</groupId>
@@ -293,7 +295,7 @@
             <artifactId>testcontainers</artifactId>
             <scope>test</scope>
         </dependency>
-    </dependencies>
+</dependencies>
 
     <build>
         <defaultGoal>spring-boot:run</defaultGoal>
@@ -503,7 +505,7 @@
                             <artifactId>nohttp-checkstyle</artifactId>
                             <version>${nohttp-checkstyle.version}</version>
                         </dependency>
-                    </dependencies>
+                  </dependencies>
                     <configuration>
                         <configLocation>checkstyle.xml</configLocation>
                         <includes>pom.xml,README.md</includes>
@@ -789,7 +791,7 @@
                             <artifactId>spring-boot-starter-data-jpa</artifactId>
                             <version>${spring-boot.version}</version>
                         </dependency>
-                    </dependencies>
+   </dependencies>
                 </plugin>
                 <plugin>
                     <!--
@@ -855,7 +857,7 @@
                     <artifactId>spring-boot-devtools</artifactId>
                     <optional>true</optional>
                 </dependency>
-            </dependencies>
+      </dependencies>
         </profile>
         <profile>
             <!-- This is automatically activated when working in Eclipse -->
@@ -871,7 +873,7 @@
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-starter-undertow</artifactId>
                 </dependency>
-            </dependencies>
+                </dependencies>
             <build>
                 <pluginManagement>
                     <plugins>
@@ -952,7 +954,7 @@
                     <groupId>org.hibernate.orm</groupId>
                     <artifactId>hibernate-jpamodelgen</artifactId>
                 </dependency>
-            </dependencies>
+          </dependencies>
         </profile>
         <profile>
             <id>no-liquibase</id>

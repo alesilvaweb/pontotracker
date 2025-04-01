@@ -46,6 +46,15 @@ export const createEntity = createAsyncThunk(
   { serializeError: serializeAxiosError },
 );
 
+export const getEntitiesByUser = createAsyncThunk(
+  'timesheet/fetch_entities_by_user',
+  async ({ userId, page, size }: { userId: string | number; page: number; size: number }) => {
+    const requestUrl = `${apiUrl}?userId.equals=${userId}&page=${page}&size=${size}&cacheBuster=${new Date().getTime()}`;
+    return axios.get<ITimesheet[]>(requestUrl);
+  },
+  { serializeError: serializeAxiosError },
+);
+
 export const updateEntity = createAsyncThunk(
   'timesheet/update_entity',
   async (entity: ITimesheet, thunkAPI) => {
@@ -88,6 +97,10 @@ export const TimesheetSlice = createEntitySlice({
         state.loading = false;
         state.entity = action.payload.data;
       })
+      .addCase(getEntitiesByUser.fulfilled, (state, action) => {
+        state.loading = false;
+        state.entities = action.payload.data;
+      })
       .addCase(deleteEntity.fulfilled, state => {
         state.updating = false;
         state.updateSuccess = true;
@@ -110,6 +123,11 @@ export const TimesheetSlice = createEntitySlice({
         state.entity = action.payload.data;
       })
       .addMatcher(isPending(getEntities, getEntity), state => {
+        state.errorMessage = null;
+        state.updateSuccess = false;
+        state.loading = true;
+      })
+      .addMatcher(isPending(getEntitiesByUser), state => {
         state.errorMessage = null;
         state.updateSuccess = false;
         state.loading = true;
