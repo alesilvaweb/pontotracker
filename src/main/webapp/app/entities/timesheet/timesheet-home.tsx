@@ -18,6 +18,32 @@ moment.updateLocale('pt-br', {
   },
 });
 
+// Definindo interfaces para melhorar a clareza do código
+interface TimeEntry {
+  id?: string | number;
+  date: string; // Data no formato ISO ou similar
+  totalHours: number; // Total de horas trabalhadas
+  overtimeHours: number | null; // Horas extras, possivelmente nulas
+  user?: {
+    id: string | number;
+  };
+  company?: {
+    id: string | number;
+  };
+  status?: string;
+}
+
+interface PeriodSummary {
+  total: number;
+  overtime: number;
+}
+
+interface TimesheetSummary {
+  month: PeriodSummary;
+  week: PeriodSummary;
+  day: PeriodSummary;
+}
+
 export const TimesheetHome = () => {
   const navigate = useNavigate();
 
@@ -251,7 +277,8 @@ export const TimesheetHome = () => {
   // Calculate summary when timeEntities change
   useEffect(() => {
     if (timeEntities && timeEntities.length > 0) {
-      calculateSummary();
+      // calculateSummary();
+      updateTimesheetSummary();
     }
   }, [timeEntities]);
 
@@ -260,8 +287,113 @@ export const TimesheetHome = () => {
     // Aqui você pode adicionar lógica para filtrar os timeEntries com base na data selecionada
   };
 
-  // Calculate summary data
-  const calculateSummary = (): void => {
+  // // Calculate summary data
+  // const calculateSummary = (): void => {
+  //   const now = moment();
+  //
+  //   // Extrair funções para filtrar entradas por período
+  //   const filterEntriesByPeriod = (filterFn: (entryDate: moment.Moment) => boolean) =>
+  //     timeEntities.filter(entry => filterFn(moment(entry.date)));
+  //
+  //   // Filtrar entradas por diferentes períodos usando moment.js
+  //   const monthEntries = filterEntriesByPeriod(entryDate => entryDate.month() === now.month() && entryDate.year() === now.year());
+  //
+  //   // Calcular início da semana (segunda-feira)
+  //   const startOfWeek = moment(now).startOf('week').add(1, 'days');
+  //   if (startOfWeek.isAfter(now)) {
+  //     startOfWeek.subtract(7, 'days');
+  //   }
+  //
+  //   const weekEntries = filterEntriesByPeriod(
+  //     entryDate => entryDate.isSameOrAfter(startOfWeek, 'day') && entryDate.isSameOrBefore(now, 'day'),
+  //   );
+  //
+  //   const dayEntries = filterEntriesByPeriod(entryDate => entryDate.isSame(now, 'day'));
+  //
+  //   // Calcular totais por período
+  //   const calculatePeriodTotals = (entries: typeof timeEntities) => {
+  //     const periodTotals = calculateTotals(entries);
+  //     return periodTotals;
+  //   };
+  //
+  //   // Atualizar o estado do resumo
+  //   setSummary({
+  //     month: calculatePeriodTotals(monthEntries),
+  //     week: calculatePeriodTotals(weekEntries),
+  //     day: calculatePeriodTotals(dayEntries),
+  //   });
+  // };
+  //
+  // // Helper to calculate total and overtime hours
+  // const calculateTotals = entries => {
+  //   const total = entries.reduce((sum, entry) => sum + entry.totalHours, 0);
+  //   const overtime = entries.reduce((sum, entry) => sum + entry.overtimeHours, 0);
+  //
+  //   return {
+  //     total: parseFloat(total.toFixed(2)),
+  //     overtime: parseFloat(overtime.toFixed(2)),
+  //   };
+  // };
+
+  /**
+   * Calcula os totais de horas normais e extras para um conjunto de entradas
+   * @param entries - Lista de entradas de tempo
+   * @returns Objeto com totais formatados de horas normais e extras
+   */
+  /**
+   * Calcula os totais de horas normais e extras para um conjunto de entradas
+   * @param entries - Lista de entradas de tempo com base na regra: mais de 8h por dia = hora extra
+   * @returns Objeto com totais formatados de horas normais e extras
+   */
+  const calculatePeriodTotals = (entries: TimeEntry[]): PeriodSummary => {
+    // Verificação inicial para evitar processamento desnecessário
+    if (!entries || entries.length === 0) {
+      return { total: 0, overtime: 0 };
+    }
+
+    // Agrupa entradas por data para calcular horas extras corretamente
+    const entriesByDate: Record<string, TimeEntry[]> = {};
+
+    // Agrupa entradas pela mesma data
+    entries.forEach(entry => {
+      if (!entry.date) return; // Pula entradas sem data
+
+      // Formato ISO da data (YYYY-MM-DD) sem o componente de tempo
+      const dateKey = entry.date.substring(0, 10);
+
+      if (!entriesByDate[dateKey]) {
+        entriesByDate[dateKey] = [];
+      }
+      entriesByDate[dateKey].push(entry);
+    });
+
+    // Inicializa os acumuladores
+    let totalHours = 0;
+    let overtimeHours = 0;
+
+    // Processa cada dia separadamente
+    Object.values(entriesByDate).forEach(dailyEntries => {
+      // Total de horas trabalhadas neste dia
+      const dailyTotal = dailyEntries.reduce((sum, entry) => sum + (typeof entry.totalHours === 'number' ? entry.totalHours : 0), 0);
+
+      // Adiciona ao total geral
+      totalHours += dailyTotal;
+
+      // Se trabalhou mais de 8 horas, calcula as horas extras
+      if (dailyTotal > 8) {
+        overtimeHours += dailyTotal - 8;
+      }
+    });
+
+    // Retorna os totais formatados com precisão de 2 casas decimais
+    return {
+      total: parseFloat(totalHours.toFixed(2)),
+      overtime: parseFloat(overtimeHours.toFixed(2)),
+    };
+  };
+
+  // Função principal que define o resumo
+  const updateTimesheetSummary = (): void => {
     const now = moment();
 
     // Extrair funções para filtrar entradas por período
@@ -283,29 +415,11 @@ export const TimesheetHome = () => {
 
     const dayEntries = filterEntriesByPeriod(entryDate => entryDate.isSame(now, 'day'));
 
-    // Calcular totais por período
-    const calculatePeriodTotals = (entries: typeof timeEntities) => {
-      const periodTotals = calculateTotals(entries);
-      return periodTotals;
-    };
-
-    // Atualizar o estado do resumo
     setSummary({
       month: calculatePeriodTotals(monthEntries),
       week: calculatePeriodTotals(weekEntries),
       day: calculatePeriodTotals(dayEntries),
     });
-  };
-
-  // Helper to calculate total and overtime hours
-  const calculateTotals = entries => {
-    const total = entries.reduce((sum, entry) => sum + entry.totalHours, 0);
-    const overtime = entries.reduce((sum, entry) => sum + entry.overtimeHours, 0);
-
-    return {
-      total: parseFloat(total.toFixed(2)),
-      overtime: parseFloat(overtime.toFixed(2)),
-    };
   };
 
   // Get the last 5 entries
@@ -392,8 +506,14 @@ export const TimesheetHome = () => {
             </div>
             <div className="summary-card-content">
               <div className="summary-card-value">{summary.day.total}h</div>
-              <div className="summary-card-subtitle">
-                <Translate contentKey="timesheetSystemApp.timesheet.overtime">Extras:</Translate> {summary.day.overtime}h
+              <div
+                className={`summary-card-subtitle ${summary.day.overtime > 0 ? 'has-overtime' : ''}`}
+                title={`${summary.day.overtime} horas extras registradas hoje`}
+                aria-label={`Horas extras: ${summary.day.overtime} horas`}
+              >
+                <div className="summary-card-subtitle">
+                  <Translate contentKey="timesheetSystemApp.timesheet.overtime">Extras:</Translate> {summary.day.overtime}h
+                </div>
               </div>
             </div>
           </div>
@@ -424,12 +544,12 @@ export const TimesheetHome = () => {
               <Translate contentKey="timesheetHome.calendarLegend.rejected">Rejeitado</Translate>
             </span>
           </div>
-          <div className="legend-item">
-            <span className="legend-color event-draft"></span>
-            <span>
-              <Translate contentKey="timesheetHome.calendarLegend.draft">Rascunho</Translate>
-            </span>
-          </div>
+          {/* <div className="legend-item"> */}
+          {/*   <span className="legend-color event-draft"></span> */}
+          {/*   <span> */}
+          {/*     <Translate contentKey="timesheetHome.calendarLegend.draft">Rascunho</Translate> */}
+          {/*   </span> */}
+          {/* </div> */}
         </div>
 
         <div className="agenda-calendar-container">
